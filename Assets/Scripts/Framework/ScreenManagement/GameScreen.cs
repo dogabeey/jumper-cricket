@@ -2,7 +2,7 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace Dogabeey
+namespace Lionsfall
 {
     public class GameScreen : SerializedMonoBehaviour
     {

@@ -41,7 +41,7 @@
  * * * * */
 using System;
 
-namespace Dogabeey.SimpleJSON
+namespace Lionsfall.SimpleJSON
 {
 #if !SimpleJSON_ExcludeBinary
     public abstract partial class JSONNode

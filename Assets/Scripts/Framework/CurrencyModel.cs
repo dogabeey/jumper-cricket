@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 
-namespace Dogabeey
+namespace Lionsfall
 {
     [CreateAssetMenu(fileName = "CurrencyModel", menuName = "Scriptable Objects/Currency Model")]
     public class CurrencyModel : ScriptableObject

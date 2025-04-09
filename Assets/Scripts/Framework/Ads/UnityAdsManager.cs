@@ -4,7 +4,7 @@ using Unity.Services.Core;
 using Unity.Services.Mediation;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
-using Dogabeey;
+using Lionsfall;
 
 public class UnityAdsManager : SingletonComponent<UnityAdsManager>
 {

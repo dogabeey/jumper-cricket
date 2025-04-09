@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Dogabeey
+namespace Lionsfall
 {
     
     public class WorldManagerUI : MonoBehaviour

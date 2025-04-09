@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace Dogabeey
+namespace Lionsfall
 {
 	/// <summary>
 	/// Gets a static instance of the Component that extends this class and makes it accessible through the Instance property.

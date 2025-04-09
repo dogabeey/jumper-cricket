@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
 using System;
-using Dogabeey.SimpleJSON;
+using Lionsfall.SimpleJSON;
 // using Firebase.Database;
 using System.Threading;
 
-namespace Dogabeey
+namespace Lionsfall
 {
 	public class SaveManager : SingletonComponent<SaveManager>
 	{

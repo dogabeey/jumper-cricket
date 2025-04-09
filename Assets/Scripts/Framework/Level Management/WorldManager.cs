@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Dogabeey
+namespace Lionsfall
 {
     public class WorldManager : SingletonComponent<WorldManager>
     {

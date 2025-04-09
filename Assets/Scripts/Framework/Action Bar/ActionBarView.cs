@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Dogabeey
+namespace Lionsfall
 {
     /// <summary>
     /// Action Bar View draws the action bar item's properties into UI elements.

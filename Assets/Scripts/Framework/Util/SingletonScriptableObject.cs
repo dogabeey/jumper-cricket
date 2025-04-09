@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Dogabeey
+namespace Lionsfall
 {
 	public abstract class SingletonScriptableObject<T> : ScriptableObject where T : ScriptableObject
 	{

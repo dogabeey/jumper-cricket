@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Dogabeey
+namespace Lionsfall
 {
     public enum Screens
     {

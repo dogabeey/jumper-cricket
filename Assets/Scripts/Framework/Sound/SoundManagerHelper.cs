@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 
-namespace Dogabeey
+namespace Lionsfall
 {
 	public class SoundManagerHelper : MonoBehaviour
 	{

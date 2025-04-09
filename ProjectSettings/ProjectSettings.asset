@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Lionsfall
-  productName: Hypercasual Template
+  productName: Jumper Shooter
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -168,6 +168,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   androidMinAspectRatio: 1
   applicationIdentifier:
+    Android: com.lionsfall.jumpershooter
     Standalone: com.lionsfall.hypercasualtemplate
   buildNumber:
     Standalone: 1
@@ -886,10 +887,10 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 50dbf5fe-1610-4292-9548-be8d33c2361e
+  cloudProjectId: 485d6dd9-4d1a-4c89-9dae-a8086c8d0c0f
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Hypercasual Template
+  projectName: Jumper Shooter
   organizationId: doga-can-kilic
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0

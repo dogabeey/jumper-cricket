@@ -5,7 +5,7 @@ using UnityEngine;
 using DG.Tweening;
 using TMPro;
 
-namespace Dogabeey
+namespace Lionsfall
 {
     public partial class CurrencyManager : SingletonComponent<CurrencyManager>
     {

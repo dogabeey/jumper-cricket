@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 
 using UnityEngine.Networking;
 
-namespace Dogabeey
+namespace Lionsfall
 {
     public class UserManager : SingletonComponent<UserManager>
     {

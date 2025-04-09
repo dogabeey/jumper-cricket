@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Dogabeey
+namespace Lionsfall
 {
     /// <summary>
     /// Action bar manager holds the current action bar items the player can use. The action bar item prefabs added to the list will be 

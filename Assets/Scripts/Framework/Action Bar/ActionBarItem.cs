@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Dogabeey
+namespace Lionsfall
 {
     /// <summary>
     /// This is an action bar item which the player can click to perform an action. It can cost any currency. New action bar items can be created by extending this class. 

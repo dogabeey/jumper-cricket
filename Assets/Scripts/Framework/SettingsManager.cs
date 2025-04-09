@@ -1,4 +1,4 @@
-using Dogabeey.SimpleJSON;
+using Lionsfall.SimpleJSON;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -7,7 +7,7 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
-namespace Dogabeey
+namespace Lionsfall
 {
     public class SettingsManager : SingletonComponent<SettingsManager>
     {

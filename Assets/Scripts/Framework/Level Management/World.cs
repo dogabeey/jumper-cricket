@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.VisualScripting;
-using Dogabeey.SimpleJSON;
+using Lionsfall.SimpleJSON;
 
-namespace Dogabeey
+namespace Lionsfall
 {
     public class World : MonoBehaviour, ISaveable
     {
