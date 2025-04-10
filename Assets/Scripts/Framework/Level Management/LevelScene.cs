@@ -38,9 +38,8 @@ namespace Lionsfall
                 EventParam param = new EventParam();
                 EventManager.TriggerEvent(Const.GameEvents.LEVEL_FAILED, param); // You can trigger this event anywhere and It will trigger It will trigger On Lose actions in the inspector, along with regular Level Failure events. This one also passes the time it took to lose the level.
             }
-
-
         }
+
 
     }
 }
