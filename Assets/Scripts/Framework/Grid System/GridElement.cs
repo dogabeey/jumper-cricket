@@ -6,7 +6,7 @@ namespace Lionsfall
     {
         public GridCell parentCell;
 
-        public abstract string ElementName { get; set; }
-        public abstract Texture2D editorIcon { get; set; }
+        public abstract string ElementName { get; }
+        public abstract Texture2D editorIcon { get; }
     }
 }

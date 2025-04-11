@@ -31,4 +31,15 @@ namespace Lionsfall
             Pickup();
         }
     }
+
+    public class Key : Item
+    {
+        public override string ElementName => "Key";
+        public override Texture2D editorIcon => Resources.Load<Texture2D>("editor_icons/items/key");
+
+        public override void OnPickup()
+        {
+            throw new System.NotImplementedException();
+        }
+    }
 }
