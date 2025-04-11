@@ -1,5 +1,9 @@
 using UnityEngine;
 
-public interface IGridElement
+namespace Lionsfall
 {
+    public abstract class GridElement
+    {
+        public Texture2D editorIcon;
+    }
 }

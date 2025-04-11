@@ -2,8 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
-
+using System.Linq;
 
 namespace Lionsfall
 {
@@ -16,6 +15,7 @@ namespace Lionsfall
         public static LevelScene Instance;
 
         public string levelName;
+        public LevelEditor levelEditor;
 
         private void Awake()
         {

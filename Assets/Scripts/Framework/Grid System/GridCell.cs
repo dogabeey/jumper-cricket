@@ -1,10 +1,14 @@
 using System;
 using UnityEngine;
 
-public abstract class GridCell : MonoBehaviour
+namespace Lionsfall
 {
-    public Vector2Int coordinates;
-    public IGridElement gridElement;
 
-    public abstract void Initialize(CellData cellData);
+    public abstract class GridCell : MonoBehaviour
+    {
+        public Vector2Int coordinates;
+        public GridElement gridElement;
+
+        public abstract void Initialize(CellData cellData);
+    }
 }
