@@ -11,6 +11,8 @@ namespace Lionsfall
 
         public override void Initialize(CellData cellData)
         {
+            gridElement.parentCell = this;
+
             if(cellData is JumperShooterCellData jumperShooterCellData)
             {
                 switch (jumperShooterCellData.cellType)
@@ -45,6 +47,11 @@ namespace Lionsfall
                         wallRenderer.SetActive(false);
                         exitRenderer.SetActive(false);
                         break;
+                }
+
+                if(jumperShooterCellData.initialElement)
+                {
+                    GridElement element = Instantiate(jumperShooterCellData.initialElement, transform.position, Quaternion.identity, elementSpawnPoint);
                 }
             }
         }

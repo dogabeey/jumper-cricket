@@ -7,7 +7,9 @@ namespace Lionsfall
     public abstract class GridCell : MonoBehaviour
     {
         public Vector2Int coordinates;
-        public GridElement gridElement;
+        public Transform elementSpawnPoint;
+
+        internal GridElement gridElement;
 
         public abstract void Initialize(CellData cellData);
     }
