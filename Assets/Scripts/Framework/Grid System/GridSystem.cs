@@ -6,20 +6,24 @@ namespace Lionsfall
     {
         public GridCell gridCellPrefab;
         public Transform gridParent;
-        public int gridWidth;
-        public int gridHeight;
         public Vector2 gridDistance = new Vector2(1, 1);
 
 
         internal GridCell[,] gridCells;
 
+        private void Start()
+        {
+            GenerateGrid(LevelScene.Instance.levelEditor.cellData);
+            CenterGrid();
+        }
+
         public void GenerateGrid(CellData[,] cellData)
         {
-            gridCells = new GridCell[gridWidth, gridHeight];
+            gridCells = new GridCell[cellData.GetLength(0), cellData.GetLength(1)];
 
-            for (int x = 0; x < gridWidth; x++)
+            for (int x = 0; x < cellData.GetLength(0); x++)
             {
-                for (int y = 0; y < gridHeight; y++)
+                for (int y = 0; y < cellData.GetLength(1); y++)
                 {
                     Vector3 position = new Vector3(x * gridDistance.x, 0, y * gridDistance.y);
                     GridCell cell = Instantiate(gridCellPrefab, position, Quaternion.identity, gridParent);
@@ -30,10 +34,17 @@ namespace Lionsfall
             }
         }
 
-        public void CentralizeGrid()
+        // Move the center of the grid to (0,0,0) world position
+        public void CenterGrid()
         {
-            Vector3 center = new Vector3((gridWidth - 1) * gridDistance.x / 2, 0, (gridHeight - 1) * gridDistance.y / 2);
-            gridParent.position = center;
+            Vector3 center = new Vector3((gridCells.GetLength(0) - 1) * gridDistance.x / 2, 0, (gridCells.GetLength(1) - 1) * gridDistance.y / 2);
+            for (int x = 0; x < gridCells.GetLength(0); x++)
+            {
+                for (int y = 0; y < gridCells.GetLength(1); y++)
+                {
+                    gridCells[x, y].transform.position -= center;
+                }
+            }
         }
     }
 }

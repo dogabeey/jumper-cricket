@@ -6,20 +6,17 @@ using System.Linq;
 
 namespace Lionsfall
 {
-    public class LevelScene : MonoBehaviour
+    public class LevelScene : SingletonComponent<LevelScene>
     {
         [HideInInspector] public bool isWin;
         [HideInInspector] public bool isLose;
         [HideInInspector] public bool isEnded;
 
-        public static LevelScene Instance;
-
         public string levelName;
         public LevelEditor levelEditor;
 
-        private void Awake()
+        private void Start()
         {
-            Instance = this;
             EventManager.TriggerEvent(Const.GameEvents.LEVEL_STARTED, new EventParam());
         }
 
