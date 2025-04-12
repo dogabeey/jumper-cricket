@@ -11,7 +11,6 @@ namespace Lionsfall
 
         public override void Initialize(CellData cellData)
         {
-            gridElement.parentCell = this;
 
             if(cellData is JumperShooterCellData jumperShooterCellData)
             {
@@ -52,6 +51,8 @@ namespace Lionsfall
                 if(jumperShooterCellData.initialElement)
                 {
                     GridElement element = Instantiate(jumperShooterCellData.initialElement, transform.position, Quaternion.identity, elementSpawnPoint);
+                    gridElement = element;
+                    gridElement.parentCell = this;
                 }
             }
         }

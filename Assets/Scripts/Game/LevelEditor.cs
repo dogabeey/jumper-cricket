@@ -14,6 +14,12 @@ namespace Lionsfall
     {
         [TableMatrix(SquareCells = true, DrawElementMethod = nameof(DrawCells))]
         public JumperShooterCellData[,] cellData;
+        [FoldoutGroup("Camera Settings")]
+        public Vector3 cameraPositionOffset;
+        [FoldoutGroup("Camera Settings")]
+        public Vector3 cameraRotationOffset;
+        [FoldoutGroup("Camera Settings")]
+        public float cameraOrthoSize = 10f;
 
         private KeyCode HOLE_KEY = KeyCode.H;
         private KeyCode EMPTY_KEY = KeyCode.E;
@@ -98,7 +104,12 @@ namespace Lionsfall
             return value;
         }
 
-
+        public void SetCamera()
+        {
+            Camera.main.transform.position += cameraPositionOffset;
+            Camera.main.transform.eulerAngles += cameraRotationOffset;
+            Camera.main.orthographicSize = cameraOrthoSize;
+        }
     }
     [System.Serializable]
     public class JumperShooterCellData : CellData
