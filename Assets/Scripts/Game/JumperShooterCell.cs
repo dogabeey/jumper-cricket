@@ -9,6 +9,25 @@ namespace Lionsfall
         public GameObject wallRenderer;
         public GameObject exitRenderer;
 
+        public override bool IsWalkable
+        {
+            get
+            {
+                if (cellType == CellType.Empty || cellType == CellType.Exit)
+                {
+                    return true;
+                }
+                else if (cellType == CellType.Wall || cellType == CellType.Hole)
+                {
+                    return false;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
         public override void Initialize(CellData cellData)
         {
 
@@ -51,6 +70,8 @@ namespace Lionsfall
                 if(jumperShooterCellData.initialElement)
                 {
                     GridElement element = Instantiate(jumperShooterCellData.initialElement, transform.position, Quaternion.identity, elementSpawnPoint);
+                    element.transform.localPosition = Vector3.zero;
+
                     gridElement = element;
                     gridElement.parentCell = this;
                 }

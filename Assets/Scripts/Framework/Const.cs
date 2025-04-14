@@ -64,6 +64,8 @@ namespace Lionsfall
             public const string LEVEL_STARTED = "LEVEL_STARTED";
 
             public const string CURRENT_WORLD_CHANGED = "CURRENT_WORLD_CHANGED";
+
+            public const string TURN_PASSED = "TURN_PASSED";
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Lionsfall
         [HideInInspector] public bool isEnded;
 
         public string levelName;
+        public int currentTurn;
         public LevelEditor levelEditor;
 
         private void Start()
@@ -37,6 +38,10 @@ namespace Lionsfall
             }
         }
 
-
+        public void PassTurn()
+        {
+            currentTurn++;
+            EventManager.TriggerEvent(Const.GameEvents.TURN_PASSED, new EventParam());
+        }
     }
 }

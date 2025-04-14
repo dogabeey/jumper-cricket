@@ -6,7 +6,6 @@ namespace Lionsfall
     {
         public string elementName;
         public GridCell parentCell;
-
-        public abstract Texture2D editorIcon { get; }
+        public Texture2D editorIcon;
     }
 }

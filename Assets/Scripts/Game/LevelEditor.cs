@@ -4,6 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEditor;
+using Unity.VisualScripting;
 
 namespace Lionsfall
 {
@@ -14,6 +16,7 @@ namespace Lionsfall
     {
         [TableMatrix(SquareCells = true, DrawElementMethod = nameof(DrawCells))]
         public JumperShooterCellData[,] cellData;
+
         [FoldoutGroup("Camera Settings")]
         public Vector3 cameraPositionOffset;
         [FoldoutGroup("Camera Settings")]
@@ -25,6 +28,8 @@ namespace Lionsfall
         private KeyCode EMPTY_KEY = KeyCode.E;
         private KeyCode WALL_KEY = KeyCode.W;
         private KeyCode EXIT_KEY = KeyCode.X;
+
+#if UNITY_EDITOR
 
         [Button]
         public void InitializeArray(Vector2Int arraySizes)
@@ -39,6 +44,7 @@ namespace Lionsfall
                 }
             }
         }
+
         private JumperShooterCellData DrawCells(Rect rect, JumperShooterCellData value)
         {
             if (value == null)
@@ -47,9 +53,9 @@ namespace Lionsfall
             }
 
             // INITIALIZATION
+            Rect iconRect = new Rect(rect.x + rect.width * 0.1f, rect.y + rect.height * 0.1f, rect.width * 0.8f, rect.height * 0.8f);
 
             // DRAWING
-            // Recolor rect based on cell type
             Color color = Color.white;
             switch (value.cellType)
             {
@@ -68,41 +74,87 @@ namespace Lionsfall
             }
             GUI.DrawTexture(rect, Texture2D.whiteTexture, ScaleMode.StretchToFill, true, 0, color, 0, 0);
 
-            // EVENTS
-            if (rect.Contains(Event.current.mousePosition))
+            if (value.initialElement != null && value.initialElement.editorIcon != null)
             {
-                if (Event.current.type == EventType.KeyDown)
+                GUI.DrawTexture(iconRect, value.initialElement.editorIcon, ScaleMode.ScaleToFit, true, 0, Color.white, 0, 0);
+            }
+
+            // EVENTS
+            Event evt = Event.current;
+
+            if (rect.Contains(evt.mousePosition))
+            {
+                // Key press for changing cell type
+                if (evt.type == EventType.KeyDown)
                 {
-                    // Left click
-                    if (Event.current.keyCode == HOLE_KEY)
+                    if (evt.keyCode == HOLE_KEY)
                     {
                         value.cellType = CellType.Hole;
                         GUI.changed = true;
-                        Event.current.Use();
+                        evt.Use();
                     }
-                    else if (Event.current.keyCode == EMPTY_KEY)
+                    else if (evt.keyCode == EMPTY_KEY)
                     {
                         value.cellType = CellType.Empty;
                         GUI.changed = true;
-                        Event.current.Use();
+                        evt.Use();
                     }
-                    else if (Event.current.keyCode == WALL_KEY)
+                    else if (evt.keyCode == WALL_KEY)
                     {
                         value.cellType = CellType.Wall;
                         GUI.changed = true;
-                        Event.current.Use();
+                        evt.Use();
                     }
-                    else if (Event.current.keyCode == EXIT_KEY)
+                    else if (evt.keyCode == EXIT_KEY)
                     {
                         value.cellType = CellType.Exit;
                         GUI.changed = true;
-                        Event.current.Use();
+                        evt.Use();
+                    }
+                    else if(evt.keyCode == KeyCode.Delete || evt.keyCode == KeyCode.Backspace)
+                    {
+                        value.initialElement = null;
+                        GUI.changed = true;
+                        evt.Use();
+                    }
+                }
+
+                // Proper Drag & Drop support
+                if (evt.type == EventType.DragUpdated || evt.type == EventType.DragPerform)
+                {
+                    if (DragAndDrop.objectReferences.Length > 0)
+                    {
+                        // Check if the dragged object has any components that is derived from GridElement
+                        bool isValidDrag = DragAndDrop.objectReferences[0].GetComponent<GridElement>() != null;
+                        if (isValidDrag)
+                            DragAndDrop.visualMode = DragAndDropVisualMode.Move;
+                        else
+                            DragAndDrop.visualMode = DragAndDropVisualMode.Rejected;
+
+                        if (evt.type == EventType.DragPerform)
+                        {
+                            DragAndDrop.AcceptDrag();
+                            GridElement element;
+                            foreach (var obj in DragAndDrop.objectReferences)
+                            {
+                                if ( element = obj.GetComponent<GridElement>())
+                                {
+                                    value.initialElement = element;
+                                    GUI.changed = true;
+                                    evt.Use();
+                                    break;
+                                }
+                            }
+                        }
+
+                        evt.Use(); // Prevent further event propagation
                     }
                 }
             }
-            
+
             return value;
         }
+#endif
 
         public void SetCamera()
         {
@@ -111,6 +163,7 @@ namespace Lionsfall
             Camera.main.orthographicSize = cameraOrthoSize;
         }
     }
+
     [System.Serializable]
     public class JumperShooterCellData : CellData
     {
