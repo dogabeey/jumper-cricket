@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elementName: player
   parentCell: {fileID: 0}
-  editorIcon: {fileID: 2800000, guid: a5c5048ba52a0964e9ac791915076a70, type: 3}
+  editorIcon: {fileID: 2800000, guid: b7b09eb09fc88a34a9874e540020e784, type: 3}
   initialHealth: 1
 --- !u!1001 &2845706816965164060
 PrefabInstance:

@@ -17,6 +17,7 @@ namespace Lionsfall
             GenerateGrid(LevelScene.Instance.levelEditor.cellData);
             CenterGrid();
             LevelScene.Instance.levelEditor.SetCamera();
+            gridParent.transform.Rotate(0, 180, 0);
         }
 
         public void GenerateGrid(CellData[,] cellData)
