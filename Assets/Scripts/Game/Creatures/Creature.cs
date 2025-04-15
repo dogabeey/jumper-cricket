@@ -50,27 +50,12 @@ namespace Lionsfall
                 parentCell = GridSystem.Instance.grid[path[0].x, path[0].y];
                 parentCell.gridElement = this;
 
+                transform.DOLookAt(targetPosition, 0f);
                 transform.DOJump(targetPosition, 1f, 1, 0.5f);
             }
         }
 
         public abstract Vector2Int GetTargetCoordinates();
         public abstract void OnStartOfTurn();
-    }
-
-    public class GenericEnemy : Creature
-    {
-
-        public override bool IsPlayer { get; set; } = false;
-        public override int TurnSpeed { get; set; } = 1;
-
-        public override Vector2Int GetTargetCoordinates()
-        {
-            throw new System.NotImplementedException();
-        }
-        public override void OnStartOfTurn()
-        {
-
-        }
     }
 }

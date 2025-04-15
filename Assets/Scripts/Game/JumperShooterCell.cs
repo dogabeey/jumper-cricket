@@ -74,6 +74,11 @@ namespace Lionsfall
 
                     gridElement = element;
                     gridElement.parentCell = this;
+
+                    if(gridElement is Player)
+                    {
+                        LevelScene.Instance.player = (Player)gridElement;
+                    }
                 }
             }
         }

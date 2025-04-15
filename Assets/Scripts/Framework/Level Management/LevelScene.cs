@@ -8,13 +8,15 @@ namespace Lionsfall
 {
     public class LevelScene : SingletonComponent<LevelScene>
     {
-        [HideInInspector] public bool isWin;
-        [HideInInspector] public bool isLose;
-        [HideInInspector] public bool isEnded;
 
         public string levelName;
         public int currentTurn;
         public LevelEditor levelEditor;
+
+        internal bool isWin;
+        internal bool isLose;
+        internal bool isEnded;
+        internal Player player;
 
         private void Start()
         {
