@@ -9,6 +9,7 @@ namespace Lionsfall
 
         public override Vector2Int GetTargetCoordinates()
         {
+            return parentCell.coordinates;
         }
         public override void OnStartOfTurn()
         {
