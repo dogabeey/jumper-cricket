@@ -13,6 +13,8 @@ namespace Lionsfall
         public List<World> worlds;
         public Transform levelContainer;
         public ParticleSystem winParticle;
+        [Header("Level Editor Settings")]
+        public Texture2D arrowUp, arrowRight, arrowDown, arrowLeft;
 
         private World currentWorld;
 

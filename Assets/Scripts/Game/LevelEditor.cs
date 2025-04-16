@@ -6,6 +6,7 @@ using UnityEngine;
 using System.Linq;
 using UnityEditor;
 using Unity.VisualScripting;
+using Sirenix.Utilities;
 
 namespace Lionsfall
 {
@@ -63,7 +64,7 @@ namespace Lionsfall
                     color = new Color(0.7f, 0.7f, 0.7f);
                     break;
                 case CellType.Empty:
-                    color = Color.white;
+                    color = new Color(0.9f, 1f, 0.8f);
                     break;
                 case CellType.Wall:
                     color = new Color(0.545f, 0.271f, 0.075f);
@@ -77,6 +78,28 @@ namespace Lionsfall
             if (value.initialElement != null && value.initialElement.editorIcon != null)
             {
                 GUI.DrawTexture(iconRect, value.initialElement.editorIcon, ScaleMode.ScaleToFit, true, 0, Color.white, 0, 0);
+            }
+
+            // Draw the direction arrow
+            if (value.initialElement)
+            {
+
+                if (value.direction == Direction.Top)
+                {
+                    GUI.DrawTexture(iconRect, WorldManager.Instance.arrowUp, ScaleMode.ScaleToFit, true, 0, Color.white, 0, 0);
+                }
+                else if (value.direction == Direction.Right)
+                {
+                    GUI.DrawTexture(iconRect, WorldManager.Instance.arrowRight, ScaleMode.ScaleToFit, true, 0, Color.white, 0, 0);
+                }
+                else if (value.direction == Direction.Bottom)
+                {
+                    GUI.DrawTexture(iconRect, WorldManager.Instance.arrowDown, ScaleMode.ScaleToFit, true, 0, Color.white, 0, 0);
+                }
+                else if (value.direction == Direction.Left)
+                {
+                    GUI.DrawTexture(iconRect, WorldManager.Instance.arrowLeft, ScaleMode.ScaleToFit, true, 0, Color.white, 0, 0);
+                }
             }
 
             // EVENTS
@@ -114,6 +137,31 @@ namespace Lionsfall
                     else if(evt.keyCode == KeyCode.Delete || evt.keyCode == KeyCode.Backspace)
                     {
                         value.initialElement = null;
+                        GUI.changed = true;
+                        evt.Use();
+                    }
+
+                    else if(evt.keyCode == KeyCode.UpArrow)
+                    {
+                        value.direction = Direction.Top;
+                        GUI.changed = true;
+                        evt.Use();
+                    }
+                    else if (evt.keyCode == KeyCode.RightArrow)
+                    {
+                        value.direction = Direction.Right;
+                        GUI.changed = true;
+                        evt.Use();
+                    }
+                    else if (evt.keyCode == KeyCode.DownArrow)
+                    {
+                        value.direction = Direction.Bottom;
+                        GUI.changed = true;
+                        evt.Use();
+                    }
+                    else if (evt.keyCode == KeyCode.LeftArrow)
+                    {
+                        value.direction = Direction.Left;
                         GUI.changed = true;
                         evt.Use();
                     }
@@ -169,6 +217,7 @@ namespace Lionsfall
     {
         public CellType cellType;
         public GridElement initialElement;
+        public Direction direction = Direction.Top;
     }
 
     public enum CellType

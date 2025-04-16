@@ -10006,6 +10006,22 @@ PrefabInstance:
       value: World Manager
       objectReference: {fileID: 0}
     - target: {fileID: 7722314759461277706, guid: e4052a4b50fee524d98d042dbbd13183, type: 3}
+      propertyPath: arrowUp
+      value: 
+      objectReference: {fileID: 2800000, guid: aa5ec4af73379864da2995ba8a0539e0, type: 3}
+    - target: {fileID: 7722314759461277706, guid: e4052a4b50fee524d98d042dbbd13183, type: 3}
+      propertyPath: arrowDown
+      value: 
+      objectReference: {fileID: 2800000, guid: 113a5c1de95e8de4a90ea5041cf6d3c9, type: 3}
+    - target: {fileID: 7722314759461277706, guid: e4052a4b50fee524d98d042dbbd13183, type: 3}
+      propertyPath: arrowLeft
+      value: 
+      objectReference: {fileID: 2800000, guid: d51ce6fcd55ff344297964cb8442a7a0, type: 3}
+    - target: {fileID: 7722314759461277706, guid: e4052a4b50fee524d98d042dbbd13183, type: 3}
+      propertyPath: arrowRight
+      value: 
+      objectReference: {fileID: 2800000, guid: 8765cfb165652a748961a68f7b8ea83c, type: 3}
+    - target: {fileID: 7722314759461277706, guid: e4052a4b50fee524d98d042dbbd13183, type: 3}
       propertyPath: winParticle
       value: 
       objectReference: {fileID: 0}

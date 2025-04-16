@@ -14,7 +14,7 @@ namespace Lionsfall
 
         private void Start()
         {
-            itemRenderer.transform.DORotate(new Vector3(0, 360, 0), 2f, RotateMode.FastBeyond360)
+            itemRenderer.transform.DORotate(new Vector3(0, 360, 0), 2f, RotateMode.WorldAxisAdd)
                 .SetEase(Ease.Linear)
                 .SetLoops(-1);
         }
