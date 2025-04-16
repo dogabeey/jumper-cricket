@@ -9169,7 +9169,7 @@ PrefabInstance:
       objectReference: {fileID: 304687943}
     - target: {fileID: 1412219885008021530, guid: 91eb49e68eb92be4cb5694f681479a91, type: 3}
       propertyPath: currencyInfos.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1412219885008021530, guid: 91eb49e68eb92be4cb5694f681479a91, type: 3}
       propertyPath: premiumCurrencyTransform
@@ -9184,9 +9184,13 @@ PrefabInstance:
       value: Diamond
       objectReference: {fileID: 0}
     - target: {fileID: 1412219885008021530, guid: 91eb49e68eb92be4cb5694f681479a91, type: 3}
+      propertyPath: currencyInfos.Array.data[0].currencyText
+      value: 
+      objectReference: {fileID: 1700455543}
+    - target: {fileID: 1412219885008021530, guid: 91eb49e68eb92be4cb5694f681479a91, type: 3}
       propertyPath: currencyInfos.Array.data[0].currencyModel
       value: 
-      objectReference: {fileID: 11400000, guid: df89d50f797990447a2175706ce22e1a, type: 2}
+      objectReference: {fileID: 11400000, guid: 66a4b17a0f8040b4689930f621c62bd6, type: 2}
     - target: {fileID: 1412219885008021530, guid: 91eb49e68eb92be4cb5694f681479a91, type: 3}
       propertyPath: currencyModels.Array.data[0].currencyText
       value: 
@@ -9195,6 +9199,10 @@ PrefabInstance:
       propertyPath: currencyModels.Array.data[0].startingAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1412219885008021530, guid: 91eb49e68eb92be4cb5694f681479a91, type: 3}
+      propertyPath: currencyInfos.Array.data[0].currencyTransform
+      value: 
+      objectReference: {fileID: 2000321782}
     - target: {fileID: 1412219885008021530, guid: 91eb49e68eb92be4cb5694f681479a91, type: 3}
       propertyPath: currencyModels.Array.data[0].currencyTransform
       value: 

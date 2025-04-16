@@ -49,6 +49,7 @@ MonoBehaviour:
   parentCell: {fileID: 0}
   editorIcon: {fileID: 2800000, guid: 5b4881956b39943428dcf853040c3eb9, type: 3}
   itemRenderer: {fileID: 5863677185686631659}
+  currencyName: Key
 --- !u!1001 &7953274209812652580
 PrefabInstance:
   m_ObjectHideFlags: 0

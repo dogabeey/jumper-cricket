@@ -21,6 +21,10 @@ namespace Lionsfall
                 {
                     return false;
                 }
+                else if(gridElement != null && gridElement is Creature)
+                {
+                    return true;
+                }
                 else
                 {
                     return false;
