@@ -25,10 +25,5 @@ namespace Lionsfall
             parentCell.gridElement = null;
             Destroy(gameObject);
         }
-
-        public void OnTriggerEnter(Collider other)
-        {
-            Pickup();
-        }
     }
 }

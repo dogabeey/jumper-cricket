@@ -51,7 +51,18 @@ namespace Lionsfall
                 parentCell.gridElement = this;
 
                 transform.DOLookAt(targetPosition, 0f);
-                transform.DOJump(targetPosition, 1f, 1, 0.5f);
+                transform.DOJump(targetPosition, 1f, 1, 0.5f).OnComplete(
+                    () =>
+                    {
+                        // After the jump, pick up the item if there is one.
+                        if (parentCell.gridElement != null)
+                        {
+                            if (parentCell.gridElement is Item item)
+                            {
+                                item.Pickup();
+                            }
+                        }
+                    });
             }
         }
 
