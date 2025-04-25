@@ -14,7 +14,7 @@ namespace Lionsfall
         public abstract int TurnSpeed { get; set; }
 
         internal int health;
-        private void Start()
+        public virtual void Start()
         {
             health = initialHealth;
         }

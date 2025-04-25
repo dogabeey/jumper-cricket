@@ -40,8 +40,8 @@ namespace Lionsfall
         // Start is called before the first frame update
         void Start()
         {
-            InvokeRepeating("SetVisibility", 0, visibilityCheckInterval);
-            InvokeRepeating("SetClickability", 0, clickabilityCheckInterval);
+            InvokeRepeating(nameof(SetVisibility), 0, visibilityCheckInterval);
+            InvokeRepeating(nameof(SetClickability), 0, clickabilityCheckInterval);
 
             onClickButton.onClick.AddListener(OnClick);
         }
