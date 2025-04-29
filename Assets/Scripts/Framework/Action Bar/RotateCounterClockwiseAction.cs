@@ -1,14 +1,16 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 
 namespace Lionsfall
 {
     public class RotateCounterClockwiseAction : ActionBarItem
     {
         public override float CostMultiplier => 0.0f; // No cost for this action
+        public bool isRotating = false;
 
         public override bool IsClickable()
         {
-            return true;
+            return !isRotating;
         }
 
         public override bool IsVisible()
@@ -18,7 +20,9 @@ namespace Lionsfall
 
         public override void OnClick()
         {
-            Player.Instance.transform.Rotate(Vector3.forward, 90);
+            isRotating = true;
+            Player.Instance.transform.DORotate(new Vector3(0, -90, 0), 0.5f).SetRelative();
+            Player.Instance.transform.DOJump(Player.Instance.transform.position, 0.5f, 1, 0.5f).OnComplete(() => isRotating = false);
         }
     }
 }

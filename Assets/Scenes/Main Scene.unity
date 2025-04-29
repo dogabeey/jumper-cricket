@@ -9874,6 +9874,18 @@ PrefabInstance:
       propertyPath: actionBarParent
       value: 
       objectReference: {fileID: 1892224948}
+    - target: {fileID: 8444249120875795054, guid: 0495dc49c91802045be0cc8a54c0df77, type: 3}
+      propertyPath: actionBarItemList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444249120875795054, guid: 0495dc49c91802045be0cc8a54c0df77, type: 3}
+      propertyPath: 'actionBarItemList.Array.data[0]'
+      value: 
+      objectReference: {fileID: 138920417297147123, guid: 0fd74af3d43a5664e9bf456f8f2520bb, type: 3}
+    - target: {fileID: 8444249120875795054, guid: 0495dc49c91802045be0cc8a54c0df77, type: 3}
+      propertyPath: 'actionBarItemList.Array.data[1]'
+      value: 
+      objectReference: {fileID: 3607292615346763154, guid: 57a052fc8fcbac0438ac6894b64606e6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
